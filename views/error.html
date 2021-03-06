@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%= error.status %></title>
+</head>
+<body>
+    <% if (error.status==404) { %>
+        <h4 style="text-align: center">您访问的页面不存在</h4>
+    <% } else { %>
+        <h4 style="text-align: center"><%= error.status %></h4>
+    <% } %>
+</body>
+</html>
