@@ -2,13 +2,15 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/index', function(req, res, next) {
-  res.render('index');
+    global.loggerInfo.info('router /index')
+    res.render('./win/v100/index');
 });
 
 router.get('/app', function(req, res, next) {
-    res.render('app');
+    global.loggerInfo.info('router /app')
+    res.render('./win/v100/app');
 });
 
 module.exports = (app) => {
-  app.use('/win/v100', router);
+    app.use('/win/v100', router);
 };

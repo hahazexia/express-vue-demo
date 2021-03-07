@@ -3,6 +3,7 @@ const router = express.Router();
 
 router.all('/*', (req, res, next) => {
     if (req.method === 'POST') {
+        global.loggerInfo.info('router all * POST')
         return res.json({
             code: 200,
             data: '请求后台接口',

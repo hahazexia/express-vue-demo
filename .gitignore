@@ -3,6 +3,7 @@ node_modules
 /dist
 /lib
 views/win/
+/log
 
 # local env files
 .env.local

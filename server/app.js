@@ -5,12 +5,14 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const ejs = require('ejs');
 const glob = require('glob');
-
+import logInit from './util/log'
+logInit();
 const app = express();
 
 // view engine setup
 app.engine('.html', ejs.__express)
 app.set('view engine', 'html');
+app.set('views', path.join(__dirname, '../views'));
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -38,5 +40,5 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-console.log('333')
+
 module.exports = app;
